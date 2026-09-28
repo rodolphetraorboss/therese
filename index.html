@@ -1,19 +1,31 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TRAORE THÉRÈSE MARKET | Mode Africaine</title>
+<title>TRAORE THÉRÈSE MARKET | Boubous • Friperie • Parfums</title>
 
 <meta name="description"
-content="TRAORE THÉRÈSE MARKET - Vente de sacs sénégalais, robes sénégalaises et chaussures ghanéennes au Burkina Faso.">
+content="TRAORE THÉRÈSE MARKET - Boubous élégants, friperie 1er choix et parfums au Burkina Faso.">
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
+:root{
+    --noir:#15110e;
+    --noir2:#211812;
+    --or:#c59a45;
+    --or2:#e8ca83;
+    --creme:#faf5ec;
+    --blanc:#fff;
+    --marron:#543525;
+    --gris:#777;
+    --gris2:#e9e1d7;
+    --vert:#25d366;
+    --rouge:#a52d2d;
+    --ombre:0 15px 45px rgba(0,0,0,.12);
+}
 
 *{
     margin:0;
@@ -26,10 +38,25 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#fffaf7;
-    color:#2d211c;
-    line-height:1.6;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--creme);
+    color:var(--noir);
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
 }
 
 a{
@@ -37,38 +64,22 @@ a{
     color:inherit;
 }
 
-button,
-input,
-select,
-textarea{
-    font-family:inherit;
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.topbar{
+    background:var(--noir);
+    color:#fff;
+    text-align:center;
+    padding:9px;
+    font-size:13px;
+    letter-spacing:.4px;
 }
 
-img{
-    width:100%;
-    display:block;
-}
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-:root{
-    --brown:#4b2418;
-    --brown-dark:#29130d;
-    --gold:#c99732;
-    --gold-light:#e7c66c;
-    --cream:#fff7ed;
-    --white:#ffffff;
-    --red:#9c3026;
-    --green:#287447;
-    --gray:#777;
-    --border:#eadfd8;
-}
-
-/* =========================================================
+/* =====================================================
    HEADER
-========================================================= */
+===================================================== */
 
 header{
     position:sticky;
@@ -78,447 +89,449 @@ header{
     box-shadow:0 3px 20px rgba(0,0,0,.08);
 }
 
-.topbar{
-    background:var(--brown-dark);
-    color:white;
-    text-align:center;
-    padding:8px;
-    font-size:13px;
-}
-
 .navbar{
-    max-width:1250px;
+    max-width:1280px;
     margin:auto;
-    min-height:78px;
+    min-height:82px;
+    padding:12px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:25px;
-    padding:12px 20px;
+    gap:20px;
 }
 
 .logo{
     font-family:Georgia,serif;
-    font-size:24px;
+    font-size:22px;
     font-weight:bold;
-    color:var(--brown);
     white-space:nowrap;
 }
 
 .logo span{
-    color:var(--gold);
+    color:var(--or);
 }
 
 nav{
     display:flex;
-    gap:25px;
+    gap:24px;
     align-items:center;
 }
 
 nav a{
-    font-weight:600;
-    font-size:15px;
-    transition:.3s;
+    font-size:14px;
+    font-weight:bold;
 }
 
 nav a:hover{
-    color:var(--gold);
+    color:var(--or);
 }
 
 .nav-actions{
     display:flex;
-    gap:10px;
-    align-items:center;
+    gap:8px;
 }
 
 .icon-btn{
     width:43px;
     height:43px;
-    border:1px solid var(--border);
+    border-radius:50%;
+    border:1px solid var(--gris2);
     background:white;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:19px;
+    font-size:18px;
     position:relative;
-}
-
-.cart-count{
-    position:absolute;
-    top:-5px;
-    right:-3px;
-    background:var(--red);
-    color:white;
-    width:20px;
-    height:20px;
-    border-radius:50%;
-    font-size:11px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
 }
 
 .menu-btn{
     display:none;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    min-height:650px;
+.cart-count{
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--rouge);
+    color:white;
+    font-size:11px;
     display:flex;
     align-items:center;
+    justify-content:center;
+}
+
+/* =====================================================
+   HERO BOUBOUS
+===================================================== */
+
+.hero{
+    min-height:720px;
     position:relative;
-    overflow:hidden;
+    display:flex;
+    align-items:center;
 
     background:
     linear-gradient(
         90deg,
-        rgba(30,12,7,.88),
-        rgba(30,12,7,.55),
-        rgba(30,12,7,.15)
+        rgba(15,9,5,.94) 0%,
+        rgba(15,9,5,.76) 42%,
+        rgba(15,9,5,.15) 100%
     ),
-    url("https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1800&q=85");
+    url("https://feugjay.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-24-at-21.36.49-1.jpeg");
 
     background-size:cover;
     background-position:center;
 }
 
 .hero-content{
-    max-width:1250px;
+    max-width:1280px;
     width:100%;
     margin:auto;
-    padding:80px 25px;
+    padding:70px 25px;
     color:white;
 }
 
-.hero-content small{
-    display:inline-block;
-    letter-spacing:3px;
-    color:var(--gold-light);
+.hero-label{
+    color:var(--or2);
+    font-size:13px;
+    letter-spacing:4px;
     font-weight:bold;
-    margin-bottom:15px;
+    margin-bottom:20px;
 }
 
 .hero h1{
     font-family:Georgia,serif;
-    font-size:clamp(42px,6vw,78px);
-    line-height:1.05;
+    font-size:clamp(48px,7vw,88px);
+    line-height:.98;
     max-width:800px;
-    margin-bottom:20px;
 }
 
 .hero h1 span{
-    color:var(--gold-light);
+    display:block;
+    color:var(--or2);
 }
 
-.hero p{
+.hero-subtitle{
     max-width:650px;
     font-size:19px;
-    margin-bottom:30px;
+    line-height:1.7;
+    margin:25px 0 30px;
+    color:#eee5dc;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
 .btn{
+    padding:15px 25px;
+    border-radius:5px;
+    font-weight:bold;
     display:inline-flex;
     justify-content:center;
     align-items:center;
     gap:8px;
-    padding:14px 25px;
-    border-radius:5px;
     border:none;
-    cursor:pointer;
-    font-weight:bold;
     transition:.3s;
 }
 
 .btn-gold{
-    background:var(--gold);
+    background:var(--or);
     color:white;
 }
 
 .btn-gold:hover{
-    background:#aa7d20;
+    background:#a77b28;
     transform:translateY(-2px);
 }
 
 .btn-outline{
-    border:1px solid white;
     color:white;
-    margin-left:10px;
+    border:1px solid white;
+    background:transparent;
 }
 
 .btn-outline:hover{
     background:white;
-    color:var(--brown);
+    color:var(--noir);
 }
 
-/* =========================================================
-   SECTIONS
-========================================================= */
+/* =====================================================
+   BADGE HERO
+===================================================== */
+
+.hero-badge{
+    margin-top:45px;
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.hero-badge div{
+    padding-left:15px;
+    border-left:2px solid var(--or);
+}
+
+.hero-badge strong{
+    display:block;
+    font-family:Georgia,serif;
+    font-size:20px;
+}
+
+.hero-badge span{
+    color:#ccc;
+    font-size:12px;
+}
+
+/* =====================================================
+   SECTION
+===================================================== */
 
 section{
-    padding:80px 20px;
+    padding:85px 20px;
 }
 
 .container{
-    max-width:1250px;
+    max-width:1280px;
     margin:auto;
 }
 
-.section-title{
+.heading{
     text-align:center;
     margin-bottom:45px;
 }
 
-.section-title small{
-    color:var(--gold);
+.heading small{
+    color:var(--or);
     font-weight:bold;
-    letter-spacing:2px;
+    letter-spacing:3px;
 }
 
-.section-title h2{
+.heading h2{
     font-family:Georgia,serif;
-    font-size:40px;
-    color:var(--brown);
-    margin:8px 0;
+    color:var(--marron);
+    font-size:44px;
+    margin:7px 0;
 }
 
-.section-title p{
-    color:var(--gray);
+.heading p{
+    color:var(--gris);
 }
 
-/* =========================================================
-   CATEGORIES
-========================================================= */
+/* =====================================================
+   BOUBOUS FEATURE
+===================================================== */
 
-.categories{
+.boubous-section{
     background:white;
 }
 
-.category-grid{
+.boubous-intro{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    grid-template-columns:1.1fr .9fr;
+    gap:55px;
+    align-items:center;
+    margin-bottom:55px;
 }
 
-.category{
-    height:360px;
-    position:relative;
-    overflow:hidden;
+.boubous-intro-image{
+    height:520px;
     border-radius:10px;
-    cursor:pointer;
+    overflow:hidden;
+    position:relative;
 }
 
-.category img{
+.boubous-intro-image img{
     height:100%;
     object-fit:cover;
-    transition:.5s;
 }
 
-.category:hover img{
-    transform:scale(1.08);
-}
-
-.category-overlay{
+.image-caption{
     position:absolute;
-    inset:0;
-    background:linear-gradient(
-        transparent 35%,
-        rgba(0,0,0,.8)
-    );
-    display:flex;
-    align-items:flex-end;
-    padding:30px;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    background:rgba(20,13,8,.82);
     color:white;
+    padding:20px;
+    border-left:4px solid var(--or);
 }
 
-.category h3{
+.image-caption strong{
     font-family:Georgia,serif;
-    font-size:30px;
+    font-size:24px;
 }
 
-/* =========================================================
-   SHOP
-========================================================= */
-
-.shop{
-    background:#fffaf7;
-}
-
-.shop-tools{
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    margin-bottom:30px;
-    flex-wrap:wrap;
-}
-
-.search-box{
-    flex:1;
-    min-width:250px;
-    position:relative;
-}
-
-.search-box input{
-    width:100%;
-    padding:15px 18px;
-    border:1px solid var(--border);
-    border-radius:5px;
-    outline:none;
-    background:white;
-}
-
-.filters{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.filters button{
-    padding:12px 17px;
-    background:white;
-    border:1px solid var(--border);
-    border-radius:5px;
-    cursor:pointer;
+.boubous-text small{
+    color:var(--or);
+    letter-spacing:3px;
     font-weight:bold;
 }
 
-.filters button.active,
-.filters button:hover{
-    background:var(--brown);
-    color:white;
+.boubous-text h2{
+    font-family:Georgia,serif;
+    font-size:47px;
+    line-height:1.1;
+    color:var(--marron);
+    margin:10px 0 20px;
 }
 
-.products-grid{
+.boubous-text p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:16px;
+}
+
+.boubous-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:25px;
+}
+
+.boubous-point{
+    background:var(--creme);
+    padding:15px;
+    border-left:3px solid var(--or);
+}
+
+.boubous-point strong{
+    display:block;
+    color:var(--marron);
+}
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:25px;
+    gap:24px;
 }
 
-.product-card{
+.product{
     background:white;
-    border-radius:10px;
+    border-radius:9px;
     overflow:hidden;
     border:1px solid #eee;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
     transition:.3s;
-    position:relative;
 }
 
-.product-card:hover{
+.product:hover{
     transform:translateY(-6px);
-    box-shadow:0 12px 30px rgba(0,0,0,.1);
+    box-shadow:var(--ombre);
 }
 
 .product-image{
-    height:290px;
+    height:330px;
     position:relative;
     overflow:hidden;
-    background:#eee;
 }
 
 .product-image img{
     height:100%;
     object-fit:cover;
-    transition:.4s;
+    transition:.5s;
 }
 
-.product-card:hover .product-image img{
-    transform:scale(1.05);
+.product:hover .product-image img{
+    transform:scale(1.06);
 }
 
-.badge{
+.product-badge{
     position:absolute;
-    left:12px;
     top:12px;
-    background:var(--red);
+    left:12px;
+    background:var(--or);
     color:white;
-    padding:5px 10px;
+    padding:6px 10px;
     font-size:11px;
     font-weight:bold;
-    border-radius:3px;
 }
 
 .favorite{
     position:absolute;
-    right:12px;
     top:12px;
+    right:12px;
     width:38px;
     height:38px;
-    border:none;
-    border-radius:50%;
+    border:0;
     background:white;
-    cursor:pointer;
+    border-radius:50%;
     font-size:18px;
 }
 
-.product-info{
+.product-body{
     padding:18px;
 }
 
-.product-category{
-    color:var(--gold);
-    text-transform:uppercase;
+.category-name{
     font-size:11px;
-    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--or);
     font-weight:bold;
+    letter-spacing:1px;
 }
 
-.product-name{
+.product h3{
     font-family:Georgia,serif;
-    font-size:20px;
+    color:var(--marron);
     margin:5px 0;
+    font-size:19px;
 }
 
-.product-description{
+.product p{
     color:#777;
     font-size:13px;
-    min-height:42px;
+    min-height:40px;
 }
 
 .price{
-    font-size:19px;
+    font-size:20px;
+    color:var(--marron);
     font-weight:bold;
-    color:var(--brown);
     margin:12px 0;
 }
 
 .product-actions{
     display:flex;
-    gap:8px;
+    gap:7px;
 }
 
 .product-actions button{
     flex:1;
-    padding:11px;
+    padding:11px 5px;
     border-radius:4px;
-    border:1px solid var(--brown);
-    cursor:pointer;
     font-weight:bold;
 }
 
-.add-cart{
-    background:var(--brown);
-    color:white;
-}
-
-.details-btn{
+.view{
+    border:1px solid var(--marron);
     background:white;
-    color:var(--brown);
+    color:var(--marron);
 }
 
-/* =========================================================
-   PROMO
-========================================================= */
+.add{
+    background:var(--marron);
+    color:white;
+    border:1px solid var(--marron);
+}
 
-.promo{
+/* =====================================================
+   CEREMONIE
+===================================================== */
+
+.ceremonie{
     background:
     linear-gradient(
-        90deg,
-        rgba(50,20,10,.9),
-        rgba(50,20,10,.65)
+        rgba(25,15,8,.88),
+        rgba(25,15,8,.88)
     ),
-    url("https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1800&q=85");
+    url("https://feugjay.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-24-at-21.36.49-1.jpeg");
 
     background-size:cover;
     background-position:center;
@@ -526,36 +539,140 @@ section{
     text-align:center;
 }
 
-.promo h2{
+.ceremonie small{
+    color:var(--or2);
+    letter-spacing:3px;
+}
+
+.ceremonie h2{
     font-family:Georgia,serif;
-    font-size:45px;
-    margin-bottom:15px;
+    font-size:48px;
+    margin:10px 0;
 }
 
-.promo p{
-    max-width:650px;
+.ceremonie p{
+    max-width:700px;
     margin:0 auto 25px;
+    color:#ddd;
 }
 
-/* =========================================================
+/* =====================================================
+   OTHER CATEGORIES
+===================================================== */
+
+.other-section{
+    background:var(--creme);
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.category-card{
+    height:400px;
+    position:relative;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.category-card img{
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.category-card:hover img{
+    transform:scale(1.06);
+}
+
+.category-content{
+    position:absolute;
+    inset:0;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    background:linear-gradient(
+        transparent 25%,
+        rgba(0,0,0,.86)
+    );
+    color:white;
+}
+
+.category-content h3{
+    font-family:Georgia,serif;
+    font-size:32px;
+}
+
+/* =====================================================
+   SHOP
+===================================================== */
+
+.shop{
+    background:white;
+}
+
+.shop-tools{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.search{
+    flex:1;
+    min-width:250px;
+}
+
+.search input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:5px;
+}
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.filter{
+    padding:12px 16px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:4px;
+    font-weight:bold;
+}
+
+.filter.active,
+.filter:hover{
+    background:var(--marron);
+    color:white;
+}
+
+/* =====================================================
    ABOUT
-========================================================= */
+===================================================== */
 
 .about{
-    background:white;
+    background:var(--creme);
 }
 
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:60px;
+    gap:55px;
     align-items:center;
 }
 
 .about-image{
-    height:500px;
-    overflow:hidden;
+    height:550px;
     border-radius:10px;
+    overflow:hidden;
 }
 
 .about-image img{
@@ -564,76 +681,77 @@ section{
 }
 
 .about-text small{
-    color:var(--gold);
-    letter-spacing:2px;
+    color:var(--or);
+    letter-spacing:3px;
     font-weight:bold;
 }
 
 .about-text h2{
     font-family:Georgia,serif;
-    font-size:42px;
-    color:var(--brown);
+    color:var(--marron);
+    font-size:45px;
     margin:10px 0 20px;
 }
 
 .about-text p{
     color:#666;
+    line-height:1.8;
     margin-bottom:15px;
 }
 
 .features{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
+    gap:12px;
     margin-top:25px;
 }
 
 .feature{
-    padding:15px;
-    background:var(--cream);
-    border-left:3px solid var(--gold);
+    background:white;
+    padding:16px;
+    border-left:3px solid var(--or);
 }
 
 .feature strong{
     display:block;
-    color:var(--brown);
+    color:var(--marron);
 }
 
-/* =========================================================
+/* =====================================================
    CONTACT
-========================================================= */
+===================================================== */
 
 .contact{
-    background:var(--cream);
+    background:white;
 }
 
 .contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:40px;
+    gap:30px;
 }
 
 .contact-card{
-    background:white;
+    background:var(--creme);
     padding:30px;
-    border-radius:10px;
+    border-radius:8px;
 }
 
 .contact-card h3{
     font-family:Georgia,serif;
+    color:var(--marron);
     font-size:28px;
     margin-bottom:20px;
-    color:var(--brown);
 }
 
-.contact-item{
+.contact-line{
+    padding:14px 0;
+    border-bottom:1px solid #ddd;
     display:flex;
     gap:15px;
-    padding:15px 0;
-    border-bottom:1px solid var(--border);
 }
 
-.contact-icon{
+.contact-line span{
     font-size:25px;
 }
 
@@ -641,10 +759,9 @@ section{
 .contact-form textarea{
     width:100%;
     padding:14px;
-    margin-bottom:15px;
-    border:1px solid var(--border);
-    border-radius:5px;
-    outline:none;
+    border:1px solid #ddd;
+    margin-bottom:13px;
+    border-radius:4px;
 }
 
 .contact-form textarea{
@@ -652,18 +769,18 @@ section{
     resize:vertical;
 }
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer{
-    background:var(--brown-dark);
+    background:var(--noir);
     color:white;
     padding:55px 20px 20px;
 }
 
 .footer-grid{
-    max-width:1250px;
+    max-width:1280px;
     margin:auto;
     display:grid;
     grid-template-columns:2fr 1fr 1fr 1fr;
@@ -672,53 +789,55 @@ footer{
 
 .footer-logo{
     font-family:Georgia,serif;
-    font-size:27px;
-    margin-bottom:15px;
+    font-size:26px;
 }
 
 .footer-logo span{
-    color:var(--gold-light);
-}
-
-footer p{
-    color:#d4c6bf;
-    font-size:14px;
+    color:var(--or2);
 }
 
 footer h4{
-    margin-bottom:15px;
-    color:var(--gold-light);
+    color:var(--or2);
+    margin-bottom:14px;
+}
+
+footer p,
+footer li{
+    color:#cfc6bf;
+    font-size:14px;
+}
+
+footer ul{
+    list-style:none;
 }
 
 footer li{
-    list-style:none;
     margin:8px 0;
-    color:#ddd;
 }
 
 .footer-bottom{
-    max-width:1250px;
+    max-width:1280px;
     margin:40px auto 0;
     padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.15);
+    border-top:1px solid #3a302a;
     text-align:center;
     color:#aaa;
     font-size:13px;
 }
 
-/* =========================================================
+/* =====================================================
    CART
-========================================================= */
+===================================================== */
 
-.cart-overlay{
+.overlay{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.5);
-    z-index:1999;
+    background:rgba(0,0,0,.6);
+    z-index:2000;
     display:none;
 }
 
-.cart-overlay.show{
+.overlay.show{
     display:block;
 }
 
@@ -730,7 +849,7 @@ footer li{
     max-width:95%;
     height:100vh;
     background:white;
-    z-index:2000;
+    z-index:2100;
     transition:.4s;
     display:flex;
     flex-direction:column;
@@ -742,25 +861,23 @@ footer li{
 
 .cart-header{
     padding:20px;
+    border-bottom:1px solid #eee;
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid var(--border);
 }
 
 .cart-header h3{
     font-family:Georgia,serif;
-    color:var(--brown);
+    color:var(--marron);
 }
 
-.close-cart{
-    border:none;
+.close{
+    border:0;
     background:none;
-    font-size:27px;
-    cursor:pointer;
+    font-size:28px;
 }
 
-.cart-items{
+.cart-list{
     flex:1;
     overflow-y:auto;
     padding:20px;
@@ -769,14 +886,14 @@ footer li{
 .empty-cart{
     text-align:center;
     color:#888;
-    margin-top:70px;
+    padding-top:70px;
 }
 
 .cart-item{
     display:flex;
     gap:12px;
-    padding:15px 0;
-    border-bottom:1px solid var(--border);
+    padding:14px 0;
+    border-bottom:1px solid #eee;
 }
 
 .cart-item img{
@@ -786,78 +903,75 @@ footer li{
     border-radius:5px;
 }
 
-.cart-item-info{
+.cart-info{
     flex:1;
 }
 
-.cart-item-info h4{
-    font-size:15px;
+.cart-info h4{
+    font-size:14px;
+    color:var(--marron);
 }
 
 .cart-price{
-    color:var(--brown);
     font-weight:bold;
+    color:var(--marron);
 }
 
 .qty{
     display:flex;
+    gap:7px;
     align-items:center;
-    gap:8px;
     margin-top:7px;
 }
 
 .qty button{
     width:25px;
     height:25px;
-    border:1px solid #ddd;
     background:white;
-    cursor:pointer;
+    border:1px solid #ddd;
 }
 
-.remove{
-    border:none;
-    background:none;
-    color:#b3261e;
-    cursor:pointer;
+.delete{
+    border:0!important;
+    color:#b22b2b;
+    width:auto!important;
 }
 
 .cart-footer{
-    border-top:1px solid var(--border);
     padding:20px;
+    border-top:1px solid #eee;
 }
 
-.cart-total{
+.total{
     display:flex;
     justify-content:space-between;
-    font-size:21px;
     font-weight:bold;
+    font-size:21px;
     margin-bottom:15px;
 }
 
-.checkout{
+.whatsapp-btn{
     width:100%;
-    background:#25d366;
-    color:white;
+    border:0;
     padding:15px;
-    border:none;
-    border-radius:5px;
+    background:var(--vert);
+    color:white;
     font-weight:bold;
-    cursor:pointer;
-    font-size:16px;
+    border-radius:5px;
 }
 
-/* =========================================================
-   MODAL PRODUCT
-========================================================= */
+/* =====================================================
+   MODALS
+===================================================== */
 
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.65);
+    background:rgba(0,0,0,.7);
     z-index:3000;
     display:none;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     padding:20px;
 }
 
@@ -866,66 +980,65 @@ footer li{
 }
 
 .modal-box{
-    background:white;
     width:850px;
     max-width:100%;
-    max-height:90vh;
+    max-height:92vh;
     overflow:auto;
+    background:white;
     border-radius:10px;
     position:relative;
 }
 
 .modal-close{
     position:absolute;
-    top:15px;
     right:15px;
+    top:15px;
     width:40px;
     height:40px;
-    border:none;
-    border-radius:50%;
+    border:0;
     background:white;
-    box-shadow:0 3px 10px #999;
-    cursor:pointer;
-    z-index:2;
+    border-radius:50%;
     font-size:22px;
+    box-shadow:0 2px 10px #999;
+    z-index:4;
 }
 
-.modal-content{
+.detail{
     display:grid;
     grid-template-columns:1fr 1fr;
 }
 
-.modal-content img{
-    height:500px;
+.detail-image{
+    height:520px;
+}
+
+.detail-image img{
+    height:100%;
     object-fit:cover;
 }
 
-.modal-details{
-    padding:40px;
+.detail-content{
+    padding:45px 35px;
 }
 
-.modal-details h2{
+.detail-content h2{
     font-family:Georgia,serif;
-    font-size:35px;
-    color:var(--brown);
-    margin:8px 0;
+    color:var(--marron);
+    font-size:34px;
 }
 
-.modal-details p{
-    color:#666;
-    margin:15px 0;
-}
-
-.modal-price{
+.detail-price{
     font-size:25px;
-    color:var(--brown);
+    color:var(--marron);
     font-weight:bold;
-    margin:20px 0;
+    margin:18px 0;
 }
 
-/* =========================================================
-   ORDER MODAL
-========================================================= */
+.detail-content p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:12px;
+}
 
 .order-form{
     padding:35px;
@@ -933,57 +1046,63 @@ footer li{
 
 .order-form h2{
     font-family:Georgia,serif;
-    color:var(--brown);
+    color:var(--marron);
     margin-bottom:20px;
 }
 
 .order-form input,
-.order-form select,
-.order-form textarea{
+.order-form textarea,
+.order-form select{
     width:100%;
     padding:14px;
-    border:1px solid var(--border);
-    border-radius:5px;
-    margin-bottom:15px;
+    margin-bottom:13px;
+    border:1px solid #ddd;
+    border-radius:4px;
 }
 
 .order-form textarea{
-    height:100px;
+    height:110px;
 }
 
-/* =========================================================
-   WHATSAPP FLOAT
-========================================================= */
+.order-summary{
+    background:var(--creme);
+    padding:15px;
+    margin-bottom:18px;
+}
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
 
 .whatsapp{
     position:fixed;
     right:20px;
     bottom:20px;
-    width:58px;
-    height:58px;
+    width:60px;
+    height:60px;
     border-radius:50%;
     background:#25d366;
     color:white;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     font-size:29px;
     z-index:1500;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
-/* =========================================================
+/* =====================================================
    TOAST
-========================================================= */
+===================================================== */
 
 .toast{
     position:fixed;
     left:50%;
     bottom:30px;
-    transform:translate(-50%,120px);
-    background:var(--brown-dark);
+    transform:translate(-50%,130px);
+    background:var(--noir);
     color:white;
-    padding:14px 25px;
+    padding:13px 22px;
     border-radius:5px;
     z-index:5000;
     transition:.4s;
@@ -993,34 +1112,32 @@ footer li{
     transform:translate(-50%,0);
 }
 
-/* =========================================================
+/* =====================================================
    RESPONSIVE
-========================================================= */
+===================================================== */
 
-@media(max-width:1000px){
+@media(max-width:1050px){
 
-    .products-grid{
+    .products{
         grid-template-columns:repeat(3,1fr);
     }
 
     .footer-grid{
         grid-template-columns:1fr 1fr;
     }
-
 }
 
 @media(max-width:800px){
 
     nav{
+        display:none;
         position:absolute;
         top:100%;
         left:0;
         right:0;
         background:white;
-        display:none;
         flex-direction:column;
         padding:20px;
-        border-top:1px solid var(--border);
     }
 
     nav.open{
@@ -1031,82 +1148,87 @@ footer li{
         display:block;
     }
 
-    .category-grid{
-        grid-template-columns:1fr;
-    }
-
-    .products-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
+    .boubous-intro,
     .about-grid,
     .contact-grid{
         grid-template-columns:1fr;
     }
 
-    .modal-content{
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .category-grid{
         grid-template-columns:1fr;
     }
 
-    .modal-content img{
-        height:300px;
+    .detail{
+        grid-template-columns:1fr;
     }
 
+    .detail-image{
+        height:330px;
+    }
 }
 
 @media(max-width:550px){
 
     .logo{
-        font-size:18px;
+        font-size:16px;
     }
 
     .hero{
-        min-height:570px;
+        min-height:650px;
+    }
+
+    .hero-content{
+        padding:50px 17px;
     }
 
     .hero h1{
-        font-size:43px;
+        font-size:48px;
     }
 
-    .hero p{
+    .hero-subtitle{
         font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
     }
 
     .btn{
         width:100%;
-        margin:5px 0;
-    }
-
-    .btn-outline{
-        margin-left:0;
     }
 
     section{
-        padding:55px 15px;
+        padding:60px 15px;
     }
 
-    .section-title h2{
-        font-size:32px;
+    .heading h2,
+    .boubous-text h2,
+    .about-text h2{
+        font-size:34px;
     }
 
-    .products-grid{
+    .products{
         grid-template-columns:1fr 1fr;
         gap:12px;
     }
 
     .product-image{
-        height:210px;
+        height:220px;
     }
 
-    .product-info{
+    .product-body{
         padding:12px;
     }
 
-    .product-name{
+    .product h3{
         font-size:16px;
     }
 
-    .product-description{
+    .product p{
         display:none;
     }
 
@@ -1114,14 +1236,22 @@ footer li{
         flex-direction:column;
     }
 
-    .footer-grid{
-        grid-template-columns:1fr;
+    .boubous-intro-image{
+        height:420px;
     }
 
+    .boubous-points,
     .features{
         grid-template-columns:1fr;
     }
 
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ceremonie h2{
+        font-size:35px;
+    }
 }
 
 </style>
@@ -1129,39 +1259,77 @@ footer li{
 
 <body>
 
-<!-- ======================================================
-     HEADER
-====================================================== -->
 
-<header>
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
 
 <div class="topbar">
-    🚚 Livraison disponible à Ouagadougou et partout au Burkina Faso
+
+✨ COLLECTION BOUBOUS • FRIPERIE 1ER CHOIX • PARFUMS
+&nbsp; | &nbsp;
+🚚 Livraison au Burkina Faso
+
 </div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
 
 <div class="navbar">
 
 <a href="#accueil" class="logo">
-    TRAORE <span>THÉRÈSE</span> MARKET
+
+TRAORE <span>THÉRÈSE</span> MARKET
+
 </a>
 
-<nav id="mainNav">
-    <a href="#accueil">Accueil</a>
-    <a href="#boutique">Boutique</a>
-    <a href="#categories">Catégories</a>
-    <a href="#apropos">À propos</a>
-    <a href="#contact">Contact</a>
+
+<nav id="nav">
+
+<a href="#accueil">Accueil</a>
+
+<a href="#boubous">Boubous</a>
+
+<a href="#friperie">Friperie</a>
+
+<a href="#parfums">Parfums</a>
+
+<a href="#apropos">À propos</a>
+
+<a href="#contact">Contact</a>
+
 </nav>
+
 
 <div class="nav-actions">
 
-<button class="icon-btn menu-btn" onclick="toggleMenu()">
-    ☰
+<button
+class="icon-btn menu-btn"
+onclick="toggleMenu()">
+
+☰
+
 </button>
 
-<button class="icon-btn" onclick="openCart()">
-    🛒
-    <span class="cart-count" id="cartCount">0</span>
+
+<button
+class="icon-btn"
+onclick="openCart()">
+
+🛒
+
+<span
+class="cart-count"
+id="cartCount">
+
+0
+
+</span>
+
 </button>
 
 </div>
@@ -1171,33 +1339,286 @@ footer li{
 </header>
 
 
-<!-- ======================================================
-     HERO
-====================================================== -->
+<!-- =====================================================
+     HERO PRINCIPAL : BOUBOUS
+===================================================== -->
 
-<section class="hero" id="accueil">
+<section
+class="hero"
+id="accueil">
 
 <div class="hero-content">
 
-<small>MODE • ÉLÉGANCE • AUTHENTICITÉ</small>
+
+<div class="hero-label">
+
+COLLECTION EXCLUSIVE • BOUBOUS
+
+</div>
+
 
 <h1>
-    L'élégance de la
-    <span>mode africaine</span>
+
+L'élégance
+commence par
+
+<span>le boubou.</span>
+
 </h1>
 
-<p>
-    Bienvenue chez TRAORE THÉRÈSE MARKET.
-    Découvrez une sélection de sacs sénégalais,
-    robes élégantes et chaussures ghanéennes.
+
+<p class="hero-subtitle">
+
+Découvrez la collection de
+<strong>TRAORE THÉRÈSE MARKET</strong> :
+des boubous élégants pour vos cérémonies,
+vos sorties et vos moments importants.
+
 </p>
 
-<a href="#boutique" class="btn btn-gold">
-    🛍️ Découvrir la boutique
+
+<div class="hero-buttons">
+
+
+<a
+href="#boubous"
+class="btn btn-gold">
+
+👗 Découvrir les boubous
+
 </a>
 
-<a href="#contact" class="btn btn-outline">
-    Nous contacter
+
+<a
+href="#contact"
+class="btn btn-outline">
+
+📱 Nous contacter
+
+</a>
+
+
+</div>
+
+
+<div class="hero-badge">
+
+<div>
+
+<strong>Boubous</strong>
+
+<span>
+Élégance africaine
+</span>
+
+</div>
+
+
+<div>
+
+<strong>1er choix</strong>
+
+<span>
+Sélection soignée
+</span>
+
+</div>
+
+
+<div>
+
+<strong>Burkina Faso</strong>
+
+<span>
+Livraison disponible
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRODUCTION BOUBOUS
+===================================================== -->
+
+<section
+class="boubous-section"
+id="boubous">
+
+<div class="container">
+
+
+<div class="heading">
+
+<small>NOTRE COLLECTION PHARE</small>
+
+<h2>
+Les Boubous
+</h2>
+
+<p>
+Des modèles élégants pour celles et ceux qui souhaitent
+affirmer leur style.
+</p>
+
+</div>
+
+
+<div class="boubous-intro">
+
+
+<div class="boubous-intro-image">
+
+<img
+src="https://feugjay.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-24-at-21.36.49-1-600x749.jpeg"
+alt="Collection de boubous">
+
+
+<div class="image-caption">
+
+<strong>
+L'élégance africaine
+</strong>
+
+<br>
+
+Sélection TRAORE THÉRÈSE MARKET
+
+</div>
+
+</div>
+
+
+<div class="boubous-text">
+
+
+<small>
+BOUBOUS & ÉLÉGANCE
+</small>
+
+
+<h2>
+
+Votre style.
+Votre identité.
+Votre boubou.
+
+</h2>
+
+
+<p>
+
+Le boubou occupe une place particulière dans la mode
+africaine. Chez <strong>TRAORE THÉRÈSE MARKET</strong>,
+nous souhaitons mettre en avant des modèles adaptés
+aux cérémonies, fêtes, sorties et événements importants.
+
+</p>
+
+
+<p>
+
+Choisissez votre modèle, indiquez votre taille et votre
+couleur préférée, puis envoyez directement votre demande
+par WhatsApp.
+
+</p>
+
+
+<div class="boubous-points">
+
+
+<div class="boubous-point">
+
+<strong>👗 Modèles élégants</strong>
+
+Pour différentes occasions.
+
+</div>
+
+
+<div class="boubous-point">
+
+<strong>✨ Sélection soignée</strong>
+
+Des articles choisis avec attention.
+
+</div>
+
+
+<div class="boubous-point">
+
+<strong>🎉 Cérémonies</strong>
+
+Idéal pour vos grands événements.
+
+</div>
+
+
+<div class="boubous-point">
+
+<strong>📱 Commande facile</strong>
+
+Commande directement sur WhatsApp.
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUITS BOUBOUS -->
+
+<div
+class="products"
+id="boubousProducts">
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BANNER CEREMONIE
+===================================================== -->
+
+<section class="ceremonie">
+
+<div class="container">
+
+<small>
+POUR VOS GRANDES OCCASIONS
+</small>
+
+<h2>
+Un boubou pour chaque cérémonie
+</h2>
+
+<p>
+
+Mariage, baptême, fête, cérémonie familiale ou sortie :
+trouvez un style qui correspond à votre occasion.
+
+</p>
+
+<a
+href="#boutique"
+class="btn btn-gold">
+
+Voir toute la collection
+
 </a>
 
 </div>
@@ -1205,56 +1626,96 @@ footer li{
 </section>
 
 
-<!-- ======================================================
-     CATEGORIES
-====================================================== -->
+<!-- =====================================================
+     FRIPERIE + PARFUMS
+===================================================== -->
 
-<section class="categories" id="categories">
+<section
+class="other-section"
+id="friperie">
 
 <div class="container">
 
-<div class="section-title">
 
-<small>NOS COLLECTIONS</small>
+<div class="heading">
 
-<h2>Découvrez nos catégories</h2>
+<small>ET AUSSI CHEZ NOUS</small>
+
+<h2>
+Friperie & Parfums
+</h2>
 
 <p>
-Des articles sélectionnés pour mettre en valeur votre style.
+Découvrez également nos autres articles sélectionnés.
 </p>
 
 </div>
+
 
 <div class="category-grid">
 
-<div class="category" onclick="filterCategory('sacs')">
 
-<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80">
+<div class="category-card">
 
-<div class="category-overlay">
-<h3>Sacs sénégalais</h3>
+<img
+src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=90"
+alt="Friperie 1er choix">
+
+
+<div class="category-content">
+
+<h3>
+Friperie 1er choix
+</h3>
+
+<p>
+Des vêtements sélectionnés avec soin.
+</p>
+
+<br>
+
+<a
+href="#boutique"
+class="btn btn-gold">
+
+Découvrir
+
+</a>
+
 </div>
 
 </div>
 
 
-<div class="category" onclick="filterCategory('robes')">
+<div
+class="category-card"
+id="parfums">
 
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80">
-
-<div class="category-overlay">
-<h3>Robes sénégalaises</h3>
-</div>
-
-</div>
+<img
+src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=90"
+alt="Parfums">
 
 
-<div class="category" onclick="filterCategory('chaussures')">
+<div class="category-content">
 
-<img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80">
+<h3>
+Parfums
+</h3>
 
-<div class="category-overlay">
-<h3>Chaussures ghanéennes</h3>
+<p>
+Des senteurs pour accompagner votre style.
+</p>
+
+<br>
+
+<a
+href="#boutique"
+class="btn btn-gold">
+
+Découvrir
+
+</a>
+
 </div>
 
 </div>
@@ -1266,22 +1727,27 @@ Des articles sélectionnés pour mettre en valeur votre style.
 </section>
 
 
-<!-- ======================================================
-     BOUTIQUE
-====================================================== -->
+<!-- =====================================================
+     BOUTIQUE COMPLETE
+===================================================== -->
 
-<section class="shop" id="boutique">
+<section
+class="shop"
+id="boutique">
 
 <div class="container">
 
-<div class="section-title">
 
-<small>NOTRE BOUTIQUE</small>
+<div class="heading">
 
-<h2>Nos articles</h2>
+<small>TRAORE THÉRÈSE MARKET</small>
+
+<h2>
+Toute la boutique
+</h2>
 
 <p>
-Choisissez vos articles et ajoutez-les à votre panier.
+Boubous • Friperie 1er choix • Parfums
 </p>
 
 </div>
@@ -1289,11 +1755,12 @@ Choisissez vos articles et ajoutez-les à votre panier.
 
 <div class="shop-tools">
 
-<div class="search-box">
+
+<div class="search">
 
 <input
-type="text"
 id="search"
+type="text"
 placeholder="🔎 Rechercher un article..."
 oninput="displayProducts()">
 
@@ -1302,20 +1769,39 @@ oninput="displayProducts()">
 
 <div class="filters">
 
-<button class="active" onclick="setCategory('all',this)">
+<button
+class="filter active"
+onclick="setCategory('all',this)">
+
 Tous
+
 </button>
 
-<button onclick="setCategory('sacs',this)">
-Sacs
+
+<button
+class="filter"
+onclick="setCategory('boubous',this)">
+
+👗 Boubous
+
 </button>
 
-<button onclick="setCategory('robes',this)">
-Robes
+
+<button
+class="filter"
+onclick="setCategory('friperie',this)">
+
+Friperie
+
 </button>
 
-<button onclick="setCategory('chaussures',this)">
-Chaussures
+
+<button
+class="filter"
+onclick="setCategory('parfums',this)">
+
+Parfums
+
 </button>
 
 </div>
@@ -1323,51 +1809,35 @@ Chaussures
 </div>
 
 
-<div class="products-grid" id="productsGrid"></div>
+<div
+class="products"
+id="products">
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ======================================================
-     PROMOTION
-====================================================== -->
+<!-- =====================================================
+     A PROPOS
+===================================================== -->
 
-<section class="promo">
-
-<div class="container">
-
-<h2>Votre style. Votre identité.</h2>
-
-<p>
-Des pièces élégantes inspirées de la richesse
-de la mode africaine.
-</p>
-
-<a href="#boutique" class="btn btn-gold">
-Voir la collection
-</a>
-
-</div>
-
-</section>
-
-
-<!-- ======================================================
-     ABOUT
-====================================================== -->
-
-<section class="about" id="apropos">
+<section
+class="about"
+id="apropos">
 
 <div class="container">
+
 
 <div class="about-grid">
+
 
 <div class="about-image">
 
 <img
-src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
+src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1100&q=90"
 alt="Mode africaine">
 
 </div>
@@ -1375,50 +1845,78 @@ alt="Mode africaine">
 
 <div class="about-text">
 
-<small>À PROPOS DE NOUS</small>
+<small>
+NOTRE BOUTIQUE
+</small>
+
 
 <h2>
 TRAORE THÉRÈSE MARKET
 </h2>
 
-<p>
-TRAORE THÉRÈSE MARKET est une boutique dédiée
-à la mode et aux accessoires inspirés de
-l'élégance africaine.
-</p>
 
 <p>
-Nous proposons notamment des sacs sénégalais,
-des robes sénégalaises et des chaussures
-ghanéennes soigneusement sélectionnés.
+
+TRAORE THÉRÈSE MARKET est une boutique orientée vers
+la mode et l'élégance, avec une place particulière
+accordée aux <strong>boubous</strong>.
+
 </p>
 
+
 <p>
-Notre objectif est de proposer à nos clientes
-des articles élégants, modernes et accessibles.
+
+Nous proposons également de la
+<strong>friperie 1er choix</strong> et des
+<strong>parfums</strong> pour compléter votre style.
+
 </p>
 
 
 <div class="features">
 
-<div class="feature">
-<strong>✨ Élégance</strong>
-Des articles choisis avec soin.
-</div>
 
 <div class="feature">
-<strong>🌍 Mode africaine</strong>
-Une identité culturelle valorisée.
+
+<strong>
+👗 Boubous
+</strong>
+
+Notre collection principale.
+
 </div>
 
-<div class="feature">
-<strong>🚚 Livraison</strong>
-Livraison au Burkina Faso.
-</div>
 
 <div class="feature">
-<strong>💬 WhatsApp</strong>
-Commande simple et rapide.
+
+<strong>
+✨ Friperie 1er choix
+</strong>
+
+Une sélection de vêtements.
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+🌸 Parfums
+</strong>
+
+Des senteurs variées.
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+🚚 Livraison
+</strong>
+
+Selon les possibilités de livraison.
+
 </div>
 
 </div>
@@ -1432,22 +1930,28 @@ Commande simple et rapide.
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      CONTACT
-====================================================== -->
+===================================================== -->
 
-<section class="contact" id="contact">
+<section
+class="contact"
+id="contact">
 
 <div class="container">
 
-<div class="section-title">
+
+<div class="heading">
 
 <small>CONTACT</small>
 
-<h2>Parlons de votre commande</h2>
+<h2>
+Commandez facilement
+</h2>
 
 <p>
-Une question ? Une commande ? Contactez-nous.
+Pour une taille, une couleur, un modèle ou un parfum,
+contactez-nous directement.
 </p>
 
 </div>
@@ -1458,51 +1962,74 @@ Une question ? Une commande ? Contactez-nous.
 
 <div class="contact-card">
 
-<h3>TRAORE THÉRÈSE MARKET</h3>
+<h3>
+TRAORE THÉRÈSE MARKET
+</h3>
 
-<div class="contact-item">
 
-<div class="contact-icon">📍</div>
+<div class="contact-line">
+
+<span>📍</span>
 
 <div>
+
 <strong>Localisation</strong>
-<p>Ouagadougou, Burkina Faso</p>
-</div>
+
+<p>
+Ouagadougou, Burkina Faso
+</p>
 
 </div>
 
+</div>
 
-<div class="contact-item">
 
-<div class="contact-icon">📱</div>
+<div class="contact-line">
+
+<span>📱</span>
 
 <div>
+
 <strong>WhatsApp</strong>
-<p>+226 74 69 68 69</p>
-</div>
+
+<p>
++226 74 69 68 69
+</p>
 
 </div>
 
+</div>
 
-<div class="contact-item">
 
-<div class="contact-icon">🛍️</div>
+<div class="contact-line">
+
+<span>👗</span>
 
 <div>
-<strong>Spécialités</strong>
-<p>Sacs • Robes • Chaussures</p>
-</div>
+
+<strong>Spécialité</strong>
+
+<p>
+Boubous
+</p>
 
 </div>
 
+</div>
 
-<div class="contact-item">
 
-<div class="contact-icon">🚚</div>
+<div class="contact-line">
+
+<span>🛍️</span>
 
 <div>
-<strong>Livraison</strong>
-<p>Ouagadougou et Burkina Faso</p>
+
+<strong>Autres produits</strong>
+
+<p>
+Friperie 1er choix • Parfums
+</p>
+
 </div>
 
 </div>
@@ -1512,26 +2039,34 @@ Une question ? Une commande ? Contactez-nous.
 
 <div class="contact-card contact-form">
 
-<h3>Envoyer un message</h3>
+<h3>
+Écrivez-nous
+</h3>
+
 
 <input
 id="contactName"
+type="text"
 placeholder="Votre nom">
+
 
 <input
 id="contactPhone"
-placeholder="Votre téléphone">
+type="text"
+placeholder="Votre numéro">
+
 
 <textarea
 id="contactMessage"
-placeholder="Votre message"></textarea>
+placeholder="Votre demande : modèle, taille, couleur, parfum..."></textarea>
+
 
 <button
 class="btn btn-gold"
 style="width:100%"
 onclick="sendContact()">
 
-Envoyer sur WhatsApp
+💬 Envoyer sur WhatsApp
 
 </button>
 
@@ -1544,27 +2079,33 @@ Envoyer sur WhatsApp
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      FOOTER
-====================================================== -->
+===================================================== -->
 
 <footer>
 
 <div class="footer-grid">
 
+
 <div>
 
 <div class="footer-logo">
+
 TRAORE <span>THÉRÈSE</span> MARKET
+
 </div>
 
-<p>
-La mode africaine, élégante et authentique.
+<p style="margin-top:12px">
+
+Boubous • Friperie 1er choix • Parfums
+
 </p>
 
-<p style="margin-top:15px">
-Sacs sénégalais • Robes sénégalaises
-• Chaussures ghanéennes
+<p style="margin-top:12px">
+
+L'élégance africaine à votre portée.
+
 </p>
 
 </div>
@@ -1572,13 +2113,30 @@ Sacs sénégalais • Robes sénégalaises
 
 <div>
 
-<h4>BOUTIQUE</h4>
+<h4>
+BOUTIQUE
+</h4>
 
 <ul>
-<li><a href="#boutique">Tous les articles</a></li>
-<li><a href="#boutique">Sacs</a></li>
-<li><a href="#boutique">Robes</a></li>
-<li><a href="#boutique">Chaussures</a></li>
+
+<li>
+<a href="#boubous">
+Boubous
+</a>
+</li>
+
+<li>
+<a href="#friperie">
+Friperie
+</a>
+</li>
+
+<li>
+<a href="#parfums">
+Parfums
+</a>
+</li>
+
 </ul>
 
 </div>
@@ -1586,13 +2144,28 @@ Sacs sénégalais • Robes sénégalaises
 
 <div>
 
-<h4>INFORMATIONS</h4>
+<h4>
+INFORMATIONS
+</h4>
 
 <ul>
-<li><a href="#apropos">À propos</a></li>
-<li><a href="#contact">Contact</a></li>
-<li>Livraison</li>
-<li>Commandes</li>
+
+<li>
+<a href="#apropos">
+À propos
+</a>
+</li>
+
+<li>
+<a href="#contact">
+Contact
+</a>
+</li>
+
+<li>
+Livraison
+</li>
+
 </ul>
 
 </div>
@@ -1600,13 +2173,24 @@ Sacs sénégalais • Robes sénégalaises
 
 <div>
 
-<h4>NOUS SUIVRE</h4>
+<h4>
+CONTACT
+</h4>
 
 <ul>
-<li>📱 WhatsApp</li>
-<li>📘 Facebook</li>
-<li>📸 Instagram</li>
-<li>🎵 TikTok</li>
+
+<li>
+📱 WhatsApp
+</li>
+
+<li>
+📍 Ouagadougou
+</li>
+
+<li>
+🇧🇫 Burkina Faso
+</li>
+
 </ul>
 
 </div>
@@ -1616,7 +2200,8 @@ Sacs sénégalais • Robes sénégalaises
 
 <div class="footer-bottom">
 
-© <span id="year"></span> TRAORE THÉRÈSE MARKET.
+© <span id="year"></span>
+TRAORE THÉRÈSE MARKET.
 Tous droits réservés.
 
 </div>
@@ -1624,14 +2209,14 @@ Tous droits réservés.
 </footer>
 
 
-<!-- ======================================================
+<!-- =====================================================
      WHATSAPP
-====================================================== -->
+===================================================== -->
 
 <a
-href="https://wa.me/22674696869"
-target="_blank"
+id="whatsappButton"
 class="whatsapp"
+target="_blank"
 title="WhatsApp">
 
 💬
@@ -1639,40 +2224,56 @@ title="WhatsApp">
 </a>
 
 
-<!-- ======================================================
-     CART
-====================================================== -->
+<!-- =====================================================
+     OVERLAY
+===================================================== -->
 
 <div
-class="cart-overlay"
-id="cartOverlay"
+class="overlay"
+id="overlay"
 onclick="closeCart()">
 </div>
 
 
-<div class="cart" id="cart">
+<!-- =====================================================
+     CART
+===================================================== -->
+
+<div
+class="cart"
+id="cart">
 
 <div class="cart-header">
 
-<h3>Mon panier</h3>
+<h3>
+Mon panier
+</h3>
 
 <button
-class="close-cart"
+class="close"
 onclick="closeCart()">
+
 ×
+
 </button>
 
 </div>
 
 
-<div class="cart-items" id="cartItems"></div>
+<div
+class="cart-list"
+id="cartList">
+
+</div>
 
 
 <div class="cart-footer">
 
-<div class="cart-total">
+<div class="total">
 
-<span>Total</span>
+<span>
+Total
+</span>
 
 <span id="cartTotal">
 0 FCFA
@@ -1680,11 +2281,12 @@ onclick="closeCart()">
 
 </div>
 
+
 <button
-class="checkout"
+class="whatsapp-btn"
 onclick="openOrder()">
 
-💬 Commander sur WhatsApp
+📱 Commander sur WhatsApp
 
 </button>
 
@@ -1693,11 +2295,13 @@ onclick="openOrder()">
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      PRODUCT MODAL
-====================================================== -->
+===================================================== -->
 
-<div class="modal" id="productModal">
+<div
+class="modal"
+id="productModal">
 
 <div class="modal-box">
 
@@ -1706,11 +2310,13 @@ class="modal-close"
 onclick="closeProductModal()">
 
 ×
+
 </button>
 
+
 <div
-class="modal-content"
-id="productModalContent">
+class="detail"
+id="productDetail">
 
 </div>
 
@@ -1719,11 +2325,13 @@ id="productModalContent">
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      ORDER MODAL
-====================================================== -->
+===================================================== -->
 
-<div class="modal" id="orderModal">
+<div
+class="modal"
+id="orderModal">
 
 <div class="modal-box">
 
@@ -1732,43 +2340,42 @@ class="modal-close"
 onclick="closeOrder()">
 
 ×
+
 </button>
 
 
 <div class="order-form">
 
-<h2>Finaliser ma commande</h2>
-
-<p style="margin-bottom:20px;color:#777">
-Veuillez renseigner vos informations.
-</p>
+<h2>
+Finaliser votre commande
+</h2>
 
 
 <input
 id="customerName"
-placeholder="Nom et prénom *"
-required>
+type="text"
+placeholder="Nom et prénom *">
 
 
 <input
 id="customerPhone"
-placeholder="Numéro de téléphone *"
-required>
+type="text"
+placeholder="Téléphone *">
 
 
 <input
 id="customerCity"
-placeholder="Ville / quartier *"
-required>
+type="text"
+placeholder="Ville / quartier *">
 
 
 <select id="delivery">
 
-<option value="Livraison à domicile">
+<option>
 Livraison à domicile
 </option>
 
-<option value="Retrait sur place">
+<option>
 Retrait sur place
 </option>
 
@@ -1777,24 +2384,20 @@ Retrait sur place
 
 <textarea
 id="customerNote"
-placeholder="Précision concernant la commande (taille, couleur, etc.)"></textarea>
+placeholder="Pour un boubou : indiquez votre taille, couleur ou modèle souhaité. Pour un parfum : indiquez la fragrance souhaitée."></textarea>
 
 
 <div
-style="background:#fff7ed;padding:15px;margin-bottom:20px;border-radius:5px">
-
-<strong>Résumé :</strong>
-
-<div id="orderSummary"></div>
-
+class="order-summary"
+id="orderSummary">
 </div>
 
 
 <button
-class="checkout"
+class="whatsapp-btn"
 onclick="sendOrder()">
 
-📱 Envoyer la commande sur WhatsApp
+📱 Envoyer ma commande
 
 </button>
 
@@ -1805,1029 +2408,1239 @@ onclick="sendOrder()">
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      TOAST
-====================================================== -->
+===================================================== -->
 
-<div class="toast" id="toast"></div>
+<div
+class="toast"
+id="toast">
+</div>
 
 
 <script>
 
-/* =========================================================
-   CONFIGURATION
-========================================================= */
+/* =====================================================
+   NUMERO WHATSAPP
+===================================================== */
 
-/*
-    REMPLACE CE NUMERO PAR LE VRAI NUMERO WHATSAPP
-    DE TRAORE THÉRÈSE MARKET.
-
-    Format :
-    indicatif pays + numéro
-    Exemple Burkina :
-    22670000000
-*/
-
-const WHATSAPP_NUMBER = "22670000000";
+const WHATSAPP_NUMBER = "22674696869";
 
 
-/* =========================================================
+/* =====================================================
    PRODUITS
-========================================================= */
+===================================================== */
 
 const products = [
 
+/* ==========================
+   BOUBOUS
+========================== */
+
 {
-    id:1,
-    name:"Sac Sénégalais Élégance",
-    category:"sacs",
-    price:25000,
-    image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85",
-    description:"Magnifique sac inspiré du savoir-faire et du style sénégalais.",
-    badge:"Nouveau"
+id:1,
+name:"Boubou Élégance Dorée",
+category:"boubous",
+price:35000,
+image:"https://feugjay.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-24-at-21.36.49-1-600x749.jpeg",
+description:"Boubou élégant idéal pour les cérémonies et grandes occasions.",
+badge:"NOUVEAU"
 },
 
 {
-    id:2,
-    name:"Sac Sénégalais Prestige",
-    category:"sacs",
-    price:30000,
-    image:"https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=85",
-    description:"Un sac chic et élégant pour vos sorties et cérémonies.",
-    badge:"Premium"
+id:2,
+name:"Boubou Prestige",
+category:"boubous",
+price:45000,
+image:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=90",
+description:"Un modèle raffiné pour une allure élégante.",
+badge:"PREMIUM"
 },
 
 {
-    id:3,
-    name:"Sac Africain Chic",
-    category:"sacs",
-    price:22000,
-    image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85",
-    description:"Design moderne avec une touche africaine.",
-    badge:""
+id:3,
+name:"Boubou Tradition",
+category:"boubous",
+price:30000,
+image:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1000&q=90",
+description:"Un style traditionnel pour vos événements.",
+badge:""
 },
 
 {
-    id:4,
-    name:"Robe Sénégalaise Royale",
-    category:"robes",
-    price:35000,
-    image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85",
-    description:"Robe élégante inspirée des tendances de la mode sénégalaise.",
-    badge:"Nouveau"
+id:4,
+name:"Boubou Cérémonie",
+category:"boubous",
+price:50000,
+image:"https://i.etsystatic.com/18043885/c/1588/1588/0/0/il/77a668/3282911888/il_300x300.3282911888_h0c8.jpg",
+description:"Une tenue élégante destinée aux grandes cérémonies.",
+badge:"EXCLUSIF"
 },
 
 {
-    id:5,
-    name:"Robe Sénégalaise Élégance",
-    category:"robes",
-    price:40000,
-    image:"https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=85",
-    description:"Une tenue raffinée pour vos événements et cérémonies.",
-    badge:"Premium"
+id:5,
+name:"Boubou Chic Femme",
+category:"boubous",
+price:40000,
+image:"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=90",
+description:"Boubou chic et élégant pour femme.",
+badge:""
 },
 
 {
-    id:6,
-    name:"Robe Africaine Prestige",
-    category:"robes",
-    price:45000,
-    image:"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=85",
-    description:"Une robe élégante pour affirmer votre style.",
-    badge:""
+id:6,
+name:"Boubou Royal",
+category:"boubous",
+price:55000,
+image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=90",
+description:"Modèle premium pour vos événements importants.",
+badge:"PREMIUM"
+},
+
+
+/* ==========================
+   FRIPERIE
+========================== */
+
+{
+id:7,
+name:"Robe Femme 1er Choix",
+category:"friperie",
+price:10000,
+image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=90",
+description:"Robe soigneusement sélectionnée.",
+badge:"1ER CHOIX"
 },
 
 {
-    id:7,
-    name:"Chaussures Ghanéennes Premium",
-    category:"chaussures",
-    price:30000,
-    image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=85",
-    description:"Chaussures élégantes inspirées du savoir-faire ghanéen.",
-    badge:"Premium"
+id:8,
+name:"Chemise Homme 1er Choix",
+category:"friperie",
+price:7500,
+image:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=90",
+description:"Chemise en excellent état.",
+badge:"1ER CHOIX"
 },
 
 {
-    id:8,
-    name:"Chaussures Ghanéennes Chic",
-    category:"chaussures",
-    price:28000,
-    image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
-    description:"Modèle confortable et élégant pour vos sorties.",
-    badge:"Nouveau"
+id:9,
+name:"Jean Femme",
+category:"friperie",
+price:10000,
+image:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1000&q=90",
+description:"Jean sélectionné dans notre friperie.",
+badge:""
 },
 
 {
-    id:9,
-    name:"Chaussures Africaines Prestige",
-    category:"chaussures",
-    price:35000,
-    image:"https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=85",
-    description:"Chaussures modernes avec une inspiration africaine.",
-    badge:""
+id:10,
+name:"Veste Homme",
+category:"friperie",
+price:15000,
+image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1000&q=90",
+description:"Veste élégante de friperie 1er choix.",
+badge:"1ER CHOIX"
+},
+
+
+/* ==========================
+   PARFUMS
+========================== */
+
+{
+id:11,
+name:"Parfum Élégance",
+category:"parfums",
+price:15000,
+image:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=90",
+description:"Une fragrance élégante pour votre quotidien.",
+badge:"NOUVEAU"
 },
 
 {
-    id:10,
-    name:"Sac Sénégalais Collection",
-    category:"sacs",
-    price:27000,
-    image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=900&q=85",
-    description:"Un modèle élégant pour accompagner toutes vos tenues.",
-    badge:""
+id:12,
+name:"Parfum Prestige",
+category:"parfums",
+price:20000,
+image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=90",
+description:"Une fragrance raffinée pour vos occasions.",
+badge:"PREMIUM"
 },
 
 {
-    id:11,
-    name:"Robe Sénégalaise Cérémonie",
-    category:"robes",
-    price:50000,
-    image:"https://images.unsplash.com/photo-1506629905607-d9c297d3a8e4?auto=format&fit=crop&w=900&q=85",
-    description:"Tenue élégante adaptée aux grandes occasions.",
-    badge:"Premium"
+id:13,
+name:"Parfum Douceur",
+category:"parfums",
+price:12000,
+image:"https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=1000&q=90",
+description:"Une senteur douce et agréable.",
+badge:""
 },
 
 {
-    id:12,
-    name:"Chaussures Ghanéennes Élégance",
-    category:"chaussures",
-    price:32000,
-    image:"https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=900&q=85",
-    description:"Un modèle élégant et confortable.",
-    badge:""
+id:14,
+name:"Parfum Collection",
+category:"parfums",
+price:18000,
+image:"https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&w=1000&q=90",
+description:"Un parfum soigneusement sélectionné.",
+badge:""
 }
 
 ];
 
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+let cart=[];
+let currentCategory="all";
 
-let cart = [];
 
-let currentCategory = "all";
-
-
-/* =========================================================
-   AFFICHAGE PRODUITS
-========================================================= */
-
-function displayProducts(){
-
-    const grid = document.getElementById("productsGrid");
-
-    const search =
-        document.getElementById("search").value
-        .toLowerCase()
-        .trim();
-
-
-    let filtered = products.filter(product => {
-
-        const categoryMatch =
-            currentCategory === "all" ||
-            product.category === currentCategory;
-
-        const searchMatch =
-            product.name.toLowerCase().includes(search) ||
-            product.description.toLowerCase().includes(search);
-
-        return categoryMatch && searchMatch;
-
-    });
-
-
-    if(filtered.length === 0){
-
-        grid.innerHTML = `
-            <div style="
-            grid-column:1/-1;
-            text-align:center;
-            padding:60px;
-            color:#777">
-
-            <h3>Aucun article trouvé</h3>
-
-            <p>
-            Essayez une autre recherche.
-            </p>
-
-            </div>
-        `;
-
-        return;
-    }
-
-
-    grid.innerHTML = filtered.map(product => `
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <img
-                src="${product.image}"
-                alt="${product.name}"
-                loading="lazy">
-
-                ${
-                    product.badge
-                    ?
-                    `<span class="badge">
-                    ${product.badge}
-                    </span>`
-                    :
-                    ""
-                }
-
-                <button
-                class="favorite"
-                onclick="toggleFavorite(this)">
-                ♡
-                </button>
-
-            </div>
-
-
-            <div class="product-info">
-
-                <div class="product-category">
-                ${getCategoryName(product.category)}
-                </div>
-
-                <h3 class="product-name">
-                ${product.name}
-                </h3>
-
-                <p class="product-description">
-                ${product.description}
-                </p>
-
-                <div class="price">
-                ${formatPrice(product.price)}
-                </div>
-
-
-                <div class="product-actions">
-
-                    <button
-                    class="details-btn"
-                    onclick="showProduct(${product.id})">
-                    Voir
-                    </button>
-
-                    <button
-                    class="add-cart"
-                    onclick="addToCart(${product.id})">
-                    🛒 Ajouter
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    `).join("");
-
-}
-
-
-/* =========================================================
-   CATEGORIE
-========================================================= */
-
-function getCategoryName(category){
-
-    const names = {
-        sacs:"Sacs sénégalais",
-        robes:"Robes sénégalaises",
-        chaussures:"Chaussures ghanéennes"
-    };
-
-    return names[category] || category;
-}
-
-
-function setCategory(category,button){
-
-    currentCategory = category;
-
-    document
-    .querySelectorAll(".filters button")
-    .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    displayProducts();
-
-}
-
-
-function filterCategory(category){
-
-    currentCategory = category;
-
-    document
-    .getElementById("boutique")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-    document
-    .querySelectorAll(".filters button")
-    .forEach(btn => {
-
-        btn.classList.remove("active");
-
-        if(
-            btn.textContent
-            .toLowerCase()
-            .includes(category === "sacs"
-            ? "sacs"
-            : category === "robes"
-            ? "robes"
-            : "chaussures")
-        ){
-            btn.classList.add("active");
-        }
-
-    });
-
-    displayProducts();
-
-}
-
-
-/* =========================================================
-   PRIX
-========================================================= */
+/* =====================================================
+   FORMAT PRIX
+===================================================== */
 
 function formatPrice(price){
 
-    return new Intl.NumberFormat("fr-FR")
-    .format(price) + " FCFA";
+return new Intl.NumberFormat("fr-FR")
+.format(price)+" FCFA";
 
 }
 
 
-/* =========================================================
+/* =====================================================
+   NOM CATEGORIE
+===================================================== */
+
+function categoryName(category){
+
+if(category==="boubous")
+return "Boubous";
+
+if(category==="friperie")
+return "Friperie 1er choix";
+
+if(category==="parfums")
+return "Parfums";
+
+return category;
+
+}
+
+
+/* =====================================================
+   AFFICHAGE PRODUITS
+===================================================== */
+
+function productCard(product){
+
+return `
+
+<article class="product">
+
+<div class="product-image">
+
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy">
+
+
+${product.badge ?
+`
+<span class="product-badge">
+${product.badge}
+</span>
+`
+:""}
+
+
+<button
+class="favorite"
+onclick="favorite(this)">
+
+♡
+</button>
+
+</div>
+
+
+<div class="product-body">
+
+<div class="category-name">
+
+${categoryName(product.category)}
+
+</div>
+
+
+<h3>
+${product.name}
+</h3>
+
+
+<p>
+${product.description}
+</p>
+
+
+<div class="price">
+
+${formatPrice(product.price)}
+
+</div>
+
+
+<div class="product-actions">
+
+
+<button
+class="view"
+onclick="showProduct(${product.id})">
+
+Voir
+
+</button>
+
+
+<button
+class="add"
+onclick="addToCart(${product.id})">
+
+🛒 Ajouter
+
+</button>
+
+
+</div>
+
+</div>
+
+</article>
+
+`;
+
+}
+
+
+/* =====================================================
+   BOUBOUS EN VEDETTE
+===================================================== */
+
+function displayBoubous(){
+
+const container=
+document.getElementById("boubousProducts");
+
+const boubous=
+products.filter(
+p=>p.category==="boubous"
+);
+
+container.innerHTML=
+boubous.map(productCard).join("");
+
+}
+
+
+/* =====================================================
+   BOUTIQUE
+===================================================== */
+
+function displayProducts(){
+
+const container=
+document.getElementById("products");
+
+const search=
+document
+.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+
+const result=
+products.filter(product=>{
+
+const categoryOk=
+currentCategory==="all" ||
+product.category===currentCategory;
+
+const searchOk=
+product.name
+.toLowerCase()
+.includes(search) ||
+
+product.description
+.toLowerCase()
+.includes(search);
+
+return categoryOk && searchOk;
+
+});
+
+
+if(result.length===0){
+
+container.innerHTML=`
+
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:60px">
+
+<h3>
+Aucun article trouvé
+</h3>
+
+<p>
+Essayez une autre recherche.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+container.innerHTML=
+result.map(productCard).join("");
+
+}
+
+
+/* =====================================================
+   FILTRES
+===================================================== */
+
+function setCategory(category,button){
+
+currentCategory=category;
+
+document
+.querySelectorAll(".filter")
+.forEach(
+b=>b.classList.remove("active")
+);
+
+button.classList.add("active");
+
+displayProducts();
+
+}
+
+
+function filterBoubous(){
+
+setCategory(
+"boubous",
+document.querySelectorAll(".filter")[1]
+);
+
+document
+.getElementById("boutique")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =====================================================
    PANIER
-========================================================= */
+===================================================== */
 
 function addToCart(id){
 
-    const product =
-        products.find(p => p.id === id);
+const product=
+products.find(
+p=>p.id===id
+);
 
-    const existing =
-        cart.find(item => item.id === id);
+const existing=
+cart.find(
+p=>p.id===id
+);
 
+if(existing){
 
-    if(existing){
+existing.quantity++;
 
-        existing.quantity++;
+}else{
 
-    }else{
+cart.push({
+...product,
+quantity:1
+});
 
-        cart.push({
-            ...product,
-            quantity:1
-        });
+}
 
-    }
+updateCart();
 
-
-    updateCart();
-
-    showToast(
-        product.name + " ajouté au panier"
-    );
+showToast(
+product.name+
+" ajouté au panier."
+);
 
 }
 
 
 function updateCart(){
 
-    const cartItems =
-        document.getElementById("cartItems");
+const list=
+document.getElementById("cartList");
 
-    const count =
-        document.getElementById("cartCount");
+const count=
+document.getElementById("cartCount");
 
-    const total =
-        document.getElementById("cartTotal");
-
-
-    const totalQuantity =
-        cart.reduce(
-            (sum,item) => sum + item.quantity,
-            0
-        );
+const total=
+document.getElementById("cartTotal");
 
 
-    count.textContent = totalQuantity;
+const number=
+cart.reduce(
+(sum,item)=>sum+item.quantity,
+0
+);
+
+count.textContent=number;
 
 
-    if(cart.length === 0){
+if(cart.length===0){
 
-        cartItems.innerHTML = `
-            <div class="empty-cart">
+list.innerHTML=`
 
-                <div style="font-size:50px">
-                🛒
-                </div>
+<div class="empty-cart">
 
-                <h3>Votre panier est vide</h3>
+<div style="font-size:50px">
+🛒
+</div>
 
-                <p>
-                Ajoutez des articles à votre panier.
-                </p>
+<h3>
+Votre panier est vide
+</h3>
 
-            </div>
-        `;
+<p>
+Ajoutez vos articles préférés.
+</p>
 
-        total.textContent = "0 FCFA";
+</div>
 
-        return;
-    }
+`;
 
+total.textContent="0 FCFA";
 
-    cartItems.innerHTML =
-        cart.map(item => `
+return;
 
-        <div class="cart-item">
-
-            <img
-            src="${item.image}"
-            alt="${item.name}">
-
-            <div class="cart-item-info">
-
-                <h4>${item.name}</h4>
-
-                <div class="cart-price">
-                ${formatPrice(item.price)}
-                </div>
-
-                <div class="qty">
-
-                    <button
-                    onclick="changeQuantity(${item.id},-1)">
-                    -
-                    </button>
-
-                    <strong>
-                    ${item.quantity}
-                    </strong>
-
-                    <button
-                    onclick="changeQuantity(${item.id},1)">
-                    +
-                    </button>
-
-                    <button
-                    class="remove"
-                    onclick="removeFromCart(${item.id})">
-                    Supprimer
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    `).join("");
+}
 
 
-    const cartTotal =
-        cart.reduce(
-            (sum,item) =>
-            sum + item.price * item.quantity,
-            0
-        );
+list.innerHTML=
+cart.map(item=>`
+
+<div class="cart-item">
+
+<img
+src="${item.image}"
+alt="${item.name}">
 
 
-    total.textContent =
-        formatPrice(cartTotal);
+<div class="cart-info">
+
+<h4>
+${item.name}
+</h4>
+
+
+<div class="cart-price">
+
+${formatPrice(item.price)}
+
+</div>
+
+
+<div class="qty">
+
+<button
+onclick="changeQuantity(${item.id},-1)">
+-
+</button>
+
+
+<strong>
+${item.quantity}
+</strong>
+
+
+<button
+onclick="changeQuantity(${item.id},1)">
++
+</button>
+
+
+<button
+class="delete"
+onclick="removeItem(${item.id})">
+
+Supprimer
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`).join("");
+
+
+const cartTotal=
+cart.reduce(
+(sum,item)=>
+sum+
+item.price*item.quantity,
+0
+);
+
+total.textContent=
+formatPrice(cartTotal);
 
 }
 
 
 function changeQuantity(id,change){
 
-    const item =
-        cart.find(item => item.id === id);
+const item=
+cart.find(
+p=>p.id===id
+);
 
-    if(!item) return;
+if(!item)return;
 
-    item.quantity += change;
+item.quantity+=change;
 
-    if(item.quantity <= 0){
+if(item.quantity<=0){
 
-        cart =
-            cart.filter(item => item.id !== id);
+cart=
+cart.filter(
+p=>p.id!==id
+);
 
-    }
+}
 
-    updateCart();
+updateCart();
 
 }
 
 
-function removeFromCart(id){
+function removeItem(id){
 
-    cart =
-        cart.filter(item => item.id !== id);
+cart=
+cart.filter(
+p=>p.id!==id
+);
 
-    updateCart();
-
-    showToast("Article supprimé du panier");
+updateCart();
 
 }
 
 
-/* =========================================================
-   CART OUVERTURE
-========================================================= */
+/* =====================================================
+   CART OPEN
+===================================================== */
 
 function openCart(){
 
-    document
-    .getElementById("cart")
-    .classList.add("show");
+document
+.getElementById("cart")
+.classList.add("show");
 
-    document
-    .getElementById("cartOverlay")
-    .classList.add("show");
+document
+.getElementById("overlay")
+.classList.add("show");
 
 }
 
 
 function closeCart(){
 
-    document
-    .getElementById("cart")
-    .classList.remove("show");
+document
+.getElementById("cart")
+.classList.remove("show");
 
-    document
-    .getElementById("cartOverlay")
-    .classList.remove("show");
+document
+.getElementById("overlay")
+.classList.remove("show");
 
 }
 
 
-/* =========================================================
-   PRODUIT DETAIL
-========================================================= */
+/* =====================================================
+   DETAIL
+===================================================== */
 
 function showProduct(id){
 
-    const product =
-        products.find(p => p.id === id);
+const p=
+products.find(
+x=>x.id===id
+);
 
-    const modal =
-        document.getElementById("productModal");
+document
+.getElementById("productDetail")
+.innerHTML=`
 
-    document
-    .getElementById("productModalContent")
-    .innerHTML = `
+<div class="detail-image">
 
-        <img
-        src="${product.image}"
-        alt="${product.name}">
+<img
+src="${p.image}"
+alt="${p.name}">
 
-        <div class="modal-details">
+</div>
 
-            <div class="product-category">
-            ${getCategoryName(product.category)}
-            </div>
 
-            <h2>
-            ${product.name}
-            </h2>
+<div class="detail-content">
 
-            <div class="modal-price">
-            ${formatPrice(product.price)}
-            </div>
+<div class="category-name">
 
-            <p>
-            ${product.description}
-            </p>
+${categoryName(p.category)}
 
-            <p>
-            Contactez TRAORE THÉRÈSE MARKET
-            pour connaître les tailles, couleurs
-            et disponibilités.
-            </p>
+</div>
 
-            <button
-            class="btn btn-gold"
-            onclick="addToCart(${product.id});closeProductModal();openCart()">
 
-            🛒 Ajouter au panier
+<h2>
+${p.name}
+</h2>
 
-            </button>
 
-        </div>
+<div class="detail-price">
 
-    `;
+${formatPrice(p.price)}
 
-    modal.classList.add("show");
+</div>
+
+
+<p>
+${p.description}
+</p>
+
+
+${
+p.category==="boubous"
+?
+`
+<p>
+📏 <strong>Taille :</strong>
+à préciser lors de la commande.
+</p>
+
+<p>
+🎨 <strong>Couleur :</strong>
+à préciser lors de la commande.
+</p>
+`
+:""
+}
+
+
+${
+p.category==="friperie"
+?
+`
+<p>
+👕 <strong>État :</strong>
+Friperie 1er choix.
+</p>
+
+<p>
+📏 <strong>Taille :</strong>
+à préciser lors de la commande.
+</p>
+`
+:""
+}
+
+
+${
+p.category==="parfums"
+?
+`
+<p>
+🌸 <strong>Fragrance :</strong>
+à préciser lors de la commande.
+</p>
+`
+:""
+}
+
+
+<br>
+
+
+<button
+class="btn btn-gold"
+onclick="
+addToCart(${p.id});
+closeProductModal();
+openCart();
+">
+
+🛒 Ajouter au panier
+
+</button>
+
+</div>
+
+`;
+
+
+document
+.getElementById("productModal")
+.classList.add("show");
 
 }
 
 
 function closeProductModal(){
 
-    document
-    .getElementById("productModal")
-    .classList.remove("show");
+document
+.getElementById("productModal")
+.classList.remove("show");
 
 }
 
 
-/* =========================================================
+/* =====================================================
    FAVORIS
-========================================================= */
+===================================================== */
 
-function toggleFavorite(button){
+function favorite(button){
 
-    if(button.textContent === "♡"){
+if(button.textContent.trim()==="♡"){
 
-        button.textContent = "♥";
+button.textContent="♥";
 
-        showToast("Article ajouté aux favoris");
+showToast(
+"Article ajouté aux favoris."
+);
 
-    }else{
+}else{
 
-        button.textContent = "♡";
+button.textContent="♡";
 
-    }
+}
 
 }
 
 
-/* =========================================================
-   COMMANDE
-========================================================= */
+/* =====================================================
+   ORDER
+===================================================== */
 
 function openOrder(){
 
-    if(cart.length === 0){
+if(cart.length===0){
 
-        showToast(
-            "Votre panier est vide."
-        );
+showToast(
+"Votre panier est vide."
+);
 
-        return;
+return;
 
-    }
+}
 
-
-    closeCart();
-
-    const summary =
-        document.getElementById("orderSummary");
+closeCart();
 
 
-    summary.innerHTML =
-        cart.map(item => `
-
-            <div style="
-            display:flex;
-            justify-content:space-between;
-            margin:8px 0">
-
-                <span>
-                ${item.name} × ${item.quantity}
-                </span>
-
-                <strong>
-                ${formatPrice(
-                    item.price * item.quantity
-                )}
-                </strong>
-
-            </div>
-
-        `).join("");
+const summary=
+document.getElementById(
+"orderSummary"
+);
 
 
-    const total =
-        cart.reduce(
-            (sum,item) =>
-            sum + item.price * item.quantity,
-            0
-        );
+summary.innerHTML=
+cart.map(item=>`
+
+<div style="
+display:flex;
+justify-content:space-between;
+margin:7px 0">
+
+<span>
+
+${item.name}
+× ${item.quantity}
+
+</span>
+
+<strong>
+
+${formatPrice(
+item.price*item.quantity
+)}
+
+</strong>
+
+</div>
+
+`).join("");
 
 
-    summary.innerHTML += `
-
-        <hr style="margin:12px 0">
-
-        <div style="
-        display:flex;
-        justify-content:space-between">
-
-            <strong>Total</strong>
-
-            <strong>
-            ${formatPrice(total)}
-            </strong>
-
-        </div>
-
-    `;
+const total=
+cart.reduce(
+(sum,item)=>
+sum+
+item.price*item.quantity,
+0
+);
 
 
-    document
-    .getElementById("orderModal")
-    .classList.add("show");
+summary.innerHTML+=`
+
+<hr style="margin:12px 0">
+
+<div style="
+display:flex;
+justify-content:space-between">
+
+<strong>
+TOTAL
+</strong>
+
+<strong>
+${formatPrice(total)}
+</strong>
+
+</div>
+
+`;
+
+
+document
+.getElementById("orderModal")
+.classList.add("show");
 
 }
 
 
 function closeOrder(){
 
-    document
-    .getElementById("orderModal")
-    .classList.remove("show");
+document
+.getElementById("orderModal")
+.classList.remove("show");
 
 }
 
 
+/* =====================================================
+   SEND ORDER
+===================================================== */
+
 function sendOrder(){
 
-    const name =
-        document
-        .getElementById("customerName")
-        .value.trim();
+const name=
+document
+.getElementById("customerName")
+.value.trim();
 
-    const phone =
-        document
-        .getElementById("customerPhone")
-        .value.trim();
+const phone=
+document
+.getElementById("customerPhone")
+.value.trim();
 
-    const city =
-        document
-        .getElementById("customerCity")
-        .value.trim();
+const city=
+document
+.getElementById("customerCity")
+.value.trim();
 
-    const delivery =
-        document
-        .getElementById("delivery")
-        .value;
+const delivery=
+document
+.getElementById("delivery")
+.value;
 
-    const note =
-        document
-        .getElementById("customerNote")
-        .value.trim();
-
-
-    if(!name || !phone || !city){
-
-        alert(
-            "Veuillez remplir votre nom, téléphone et ville."
-        );
-
-        return;
-
-    }
+const note=
+document
+.getElementById("customerNote")
+.value.trim();
 
 
-    let message =
-`🛍️ *COMMANDE - TRAORE THÉRÈSE MARKET*
+if(!name||!phone||!city){
 
-👤 *Client :* ${name}
-📱 *Téléphone :* ${phone}
-📍 *Ville / quartier :* ${city}
-🚚 *Livraison :* ${delivery}
+alert(
+"Veuillez renseigner votre nom, téléphone et ville."
+);
+
+return;
+
+}
+
+
+let message=
+
+`🛍️ *COMMANDE TRAORE THÉRÈSE MARKET*
+
+👤 Client :
+${name}
+
+📱 Téléphone :
+${phone}
+
+📍 Ville / quartier :
+${city}
+
+🚚 Livraison :
+${delivery}
+
+━━━━━━━━━━━━━━
 
 *ARTICLES :*
 `;
 
 
-    cart.forEach(item => {
+cart.forEach(item=>{
 
-        message +=
-`\n• ${item.name}
-  Quantité : ${item.quantity}
-  Prix : ${formatPrice(item.price)}
-  Sous-total : ${formatPrice(
-      item.price * item.quantity
-  )}\n`;
+message+=`
 
-    });
+👗 *${item.name}*
+Quantité : ${item.quantity}
+Prix : ${formatPrice(item.price)}
+Sous-total : ${formatPrice(
+item.price*item.quantity
+)}
+`;
 
-
-    const total =
-        cart.reduce(
-            (sum,item) =>
-            sum + item.price * item.quantity,
-            0
-        );
+});
 
 
-    message +=
-`\n💰 *TOTAL : ${formatPrice(total)}*`;
+const total=
+cart.reduce(
+(sum,item)=>
+sum+
+item.price*item.quantity,
+0
+);
 
 
-    if(note){
+message+=`
 
-        message +=
-`\n\n📝 *Note :*
-${note}`;
-
-    }
+━━━━━━━━━━━━━━
+💰 *TOTAL : ${formatPrice(total)}*
+`;
 
 
-    message +=
-`\n\nMerci de votre confiance à TRAORE THÉRÈSE MARKET. ❤️`;
+if(note){
 
+message+=`
 
-    const url =
-        "https://wa.me/" +
-        WHATSAPP_NUMBER +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-    window.open(url,"_blank");
-
-
-    cart = [];
-
-    updateCart();
-
-    closeOrder();
-
-    showToast(
-        "Commande préparée pour WhatsApp."
-    );
+📝 Précisions :
+${note}
+`;
 
 }
 
 
-/* =========================================================
-   CONTACT WHATSAPP
-========================================================= */
+message+=`
+
+Merci de votre confiance.
+❤️ TRAORE THÉRÈSE MARKET`;
+
+
+const url=
+"https://wa.me/"+
+WHATSAPP_NUMBER+
+"?text="+
+encodeURIComponent(message);
+
+
+window.open(
+url,
+"_blank"
+);
+
+
+cart=[];
+
+updateCart();
+
+closeOrder();
+
+showToast(
+"Commande préparée sur WhatsApp."
+);
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
 
 function sendContact(){
 
-    const name =
-        document
-        .getElementById("contactName")
-        .value.trim();
+const name=
+document
+.getElementById("contactName")
+.value.trim();
 
-    const phone =
-        document
-        .getElementById("contactPhone")
-        .value.trim();
+const phone=
+document
+.getElementById("contactPhone")
+.value.trim();
 
-    const message =
-        document
-        .getElementById("contactMessage")
-        .value.trim();
-
-
-    if(!name || !message){
-
-        alert(
-            "Veuillez remplir votre nom et votre message."
-        );
-
-        return;
-
-    }
+const msg=
+document
+.getElementById("contactMessage")
+.value.trim();
 
 
-    const whatsappMessage =
-`Bonjour TRAORE THÉRÈSE MARKET.
+if(!name||!msg){
 
-👤 Nom : ${name}
-📱 Téléphone : ${phone}
+alert(
+"Veuillez renseigner votre nom et votre message."
+);
 
-💬 Message :
-${message}`;
-
-
-    const url =
-        "https://wa.me/" +
-        WHATSAPP_NUMBER +
-        "?text=" +
-        encodeURIComponent(
-            whatsappMessage
-        );
-
-
-    window.open(url,"_blank");
+return;
 
 }
 
 
-/* =========================================================
-   MENU MOBILE
-========================================================= */
+const text=
+
+`Bonjour TRAORE THÉRÈSE MARKET.
+
+👤 Nom :
+${name}
+
+📱 Téléphone :
+${phone}
+
+💬 Demande :
+${msg}`;
+
+
+const url=
+"https://wa.me/"+
+WHATSAPP_NUMBER+
+"?text="+
+encodeURIComponent(text);
+
+
+window.open(
+url,
+"_blank"
+);
+
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
 
 function toggleMenu(){
 
-    document
-    .getElementById("mainNav")
-    .classList.toggle("open");
+document
+.getElementById("nav")
+.classList.toggle("open");
 
 }
 
 
-/* =========================================================
+/* =====================================================
    TOAST
-========================================================= */
+===================================================== */
 
 function showToast(message){
 
-    const toast =
-        document.getElementById("toast");
+const toast=
+document.getElementById("toast");
 
-    toast.textContent = message;
+toast.textContent=message;
 
-    toast.classList.add("show");
+toast.classList.add("show");
 
-
-    setTimeout(() => {
-
-        toast.classList.remove("show");
-
-    },2500);
+setTimeout(
+()=>{
+toast.classList.remove("show");
+},
+2500
+);
 
 }
 
 
-/* =========================================================
-   ANNEE
-========================================================= */
+/* =====================================================
+   INIT
+===================================================== */
 
 document
 .getElementById("year")
-.textContent =
+.textContent=
 new Date().getFullYear();
 
 
-/* =========================================================
-   INITIALISATION
-========================================================= */
+document
+.getElementById("whatsappButton")
+.href=
+"https://wa.me/"+
+WHATSAPP_NUMBER;
+
+
+displayBoubous();
 
 displayProducts();
 
 updateCart();
 
 
-/* =========================================================
-   FERMETURE MODALS EN CLIQUANT A L'EXTERIEUR
-========================================================= */
+/* =====================================================
+   FERMETURE MODALES
+===================================================== */
 
 document
 .getElementById("productModal")
-.addEventListener("click",function(e){
+.addEventListener(
+"click",
+function(e){
 
-    if(e.target === this){
-
-        closeProductModal();
-
-    }
+if(e.target===this)
+closeProductModal();
 
 });
 
 
 document
 .getElementById("orderModal")
-.addEventListener("click",function(e){
+.addEventListener(
+"click",
+function(e){
 
-    if(e.target === this){
-
-        closeOrder();
-
-    }
+if(e.target===this)
+closeOrder();
 
 });
 
 
-/* =========================================================
-   FERMETURE MENU APRES CLIC
-========================================================= */
+/* =====================================================
+   FERMER MENU
+===================================================== */
 
 document
-.querySelectorAll("#mainNav a")
-.forEach(link => {
+.querySelectorAll("#nav a")
+.forEach(link=>{
 
-    link.addEventListener("click",() => {
+link.addEventListener(
+"click",
+()=>{
 
-        document
-        .getElementById("mainNav")
-        .classList.remove("open");
+document
+.getElementById("nav")
+.classList.remove("open");
 
-    });
+});
 
 });
 
@@ -2835,3 +3648,4 @@ document
 
 </body>
 </html>
+```
